@@ -819,7 +819,17 @@ iframe {
   width: 100%;
 }
 
+.team_founders .item-team__img {
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+  overflow: hidden;
+}
+
 .team_founders .item-team__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: top center;
 }
 
@@ -831,12 +841,15 @@ iframe {
 }
 
 .item-team__img {
+  width: 100%;
   max-width: 360px;
   height: 363px;
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .item-team__img img {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 8px;
