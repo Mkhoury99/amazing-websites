@@ -6,7 +6,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <title>Amazing Websites — Never Stop Building</title>
   <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" href="css/storm.css?v=storm2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css" />
+  <link rel="stylesheet" href="css/storm.css?v=storm13" />
 </head>
 <body class="page-home">
   <header class="sl-top">
@@ -14,63 +15,104 @@
     <nav class="sl-pills" aria-label="Main">
       <a href="index.html" class="is-on">Explore</a>
       <a href="services.html">Studio</a>
+      <a href="pricing.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="clients.html">Clients</a>
       <a href="contact.html">Talk</a>
       <button type="button" data-menu>Menu</button>
     </nav>
   </header>
 
   <section class="lab">
-    <canvas class="lab__rain" id="rain"></canvas>
-    <img class="lab__figure" src="images/Storm/hero-figure.jpg" alt="Explorer in technical rain gear" />
-
-    <div class="lab__ui">
-      <aside class="lab__panel" aria-label="Test your site">
-        <div class="lab__panel-head">
-          <h2>TEST YOUR SITE</h2>
-          <button class="lab__pause" id="pause" type="button" aria-label="Pause rain">❚❚</button>
+      <canvas class="lab__rain" id="rain"></canvas>
+      <div
+        class="lab__model"
+        id="model"
+        aria-hidden="true"
+        data-frames="images/Storm/hero-figure.jpg,images/Storm/hero-figure-2.jpg,images/Storm/hero-figure-3.jpg"
+      ></div>
+      <div class="lab__figure-wrap">
+        <div class="lab__figure" id="figure">
+          <img class="is-on" src="images/Storm/hero-figure.jpg" alt="" />
+          <img src="images/Storm/hero-figure-2.jpg" alt="" />
+          <img src="images/Storm/hero-figure-3.jpg" alt="" />
         </div>
-        <label class="lab__control">
-          Rain intensity
-          <span id="intensityVal">35%</span>
-          <input id="intensity" type="range" min="4" max="100" value="35" />
-        </label>
-        <label class="lab__control">
-          Drop speed
-          <span id="speedVal">80%</span>
-          <input id="speed" type="range" min="10" max="100" value="80" />
-        </label>
-        <label class="lab__control">
-          Drop size
-          <span id="sizeVal">24%</span>
-          <input id="size" type="range" min="8" max="100" value="24" />
-        </label>
-      </aside>
-
-      <div class="lab__wet">
-        <div class="lab__wet-num">💧 <span id="wetness">01</span><small>%</small></div>
-        <p>SITE SURFACE<br />WETNESS</p>
       </div>
 
-      <h1 class="lab__headline"><span>never</span><br />stop<br />building</h1>
+      <div class="lab__ui" id="labUi">
+        <aside class="lab__panel" aria-label="Test your site">
+          <div class="lab__panel-head">
+            <h2>TEST YOUR SITE</h2>
+            <button class="lab__pause" id="pause" type="button" aria-label="Pause sparkles">❚❚</button>
+          </div>
+          <label class="lab__control">
+            Sparkles
+            <span id="sparkleVal">35%</span>
+            <input id="sparkle" type="range" min="0" max="100" value="35" />
+          </label>
+          <label class="lab__control">
+            Confetti
+            <span id="confettiVal">20%</span>
+            <input id="confetti" type="range" min="0" max="100" value="20" />
+          </label>
+          <label class="lab__control">
+            Burst size
+            <span id="burstVal">30%</span>
+            <input id="burst" type="range" min="0" max="100" value="30" />
+          </label>
+        </aside>
 
-      <div class="lab__copy">
-        <h2>We build sites for humans, not boardrooms</h2>
-        <p>From a 2026 call to live pages: websites, content, and logos by Mansour and Elio. Drag the sliders. Watch the storm answer.</p>
-      </div>
+        <div class="lab__wet">
+          <div class="lab__wet-num">✨ <span id="awesomeness">28</span><small>%</small></div>
+          <p>SITE AWESOMENESS<br />LEVEL</p>
+        </div>
 
-      <div class="lab__product">
-        <a href="pricing.html">
-          <img src="images/Storm/goggles.jpg" alt="Logo Design" />
-          <p>Logo Design — $900. A mark with personality, tested against beige.</p>
-        </a>
+        <h1 class="lab__headline">
+          <span>never</span>
+          <span>stop</span>
+          <span>building</span>
+        </h1>
+
+        <div class="lab__copy">
+          <h2>
+            <span>We equip</span>
+            <span>founders for</span>
+            <span>every peak and</span>
+            <span>trail</span>
+          </h2>
+          <p>From a 2026 call to live pages. Websites, content, and logos by Mansour and Elio.</p>
+        </div>
+
       </div>
+    </section>
+
+  <section class="manifesto-track" id="manifesto">
+    <div class="manifesto" data-manifesto>
+      <p class="chapter__kicker manifesto__kicker"><span>00 — PHILOSOPHY</span><span>STATEMENT 01</span></p>
+      <h2 class="manifesto__line" data-fill>We don't<br />design for<br />boardrooms.</h2>
+    </div>
+    <div class="manifesto" data-manifesto>
+      <p class="chapter__kicker manifesto__kicker"><span>00 — PHILOSOPHY</span><span>STATEMENT 02</span></p>
+      <h2 class="manifesto__line" data-fill>We design<br />for what<br />comes <em>next.</em></h2>
     </div>
   </section>
 
   <section class="details" id="details">
-    <p class="chapter__kicker"><span>00 — THE 2026 CALL</span><span>STATEMENT 01</span></p>
+    <p class="chapter__kicker"><span>00 — THE 2026 CALL</span><span>STATEMENT 02</span></p>
     <h2>Elio made the call. Mansour was already done with cubicles.</h2>
     <p>Ten minutes later they had a company name and zero interest in meetings that should have been emails. Amazing Websites still ships with that same energy: honest, a little chaotic, and very done with corporate fog.</p>
+    <div class="founders">
+      <article class="founder">
+        <img src="images/About/Mansour.jpg" alt="Mansour" />
+        <h3>Mansour</h3>
+        <p>Cofounder. The one in black.</p>
+      </article>
+      <article class="founder">
+        <img src="images/About/Elio.jpg" alt="Elio" />
+        <h3>Elio</h3>
+        <p>Cofounder. He made the 2026 call.</p>
+      </article>
+    </div>
     <div class="next"><a href="services.html">Next chapter — 01 Studio ↗</a></div>
   </section>
 
@@ -84,10 +126,16 @@
       <a href="services.html"><small>01</small> Studio</a>
       <a href="pricing.html"><small>02</small> Offers</a>
       <a href="about.html"><small>03</small> About</a>
-      <a href="contact.html"><small>04</small> Talk</a>
+      <a href="clients.html"><small>04</small> Clients</a>
+      <a href="contact.html"><small>05</small> Talk</a>
     </nav>
     <p>Amazing Websites · 2026 · Never stop building</p>
   </div>
-  <script src="js/storm.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script>
+  <script src="js/storm.js?v=13"></script>
 </body>
 </html>
