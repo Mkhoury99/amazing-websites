@@ -112,7 +112,7 @@
     const meshes = [];
     let loaded = 0;
     const mouse = { x: 0, y: 0 };
-    const state = { progress: 0, pose: 0, poseClock: 0 };
+    const state = { progress: 0, pose: 0, poseClock: 0, baseX: 1.02, baseS: 0.66 };
 
     sources.forEach((src, i) => {
       loader.load(src, (tex) => {
@@ -128,7 +128,7 @@
           fragmentShader,
           transparent: true,
         });
-        const mesh = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 6.3, 1, 1), mat);
+        const mesh = new THREE.Mesh(new THREE.PlaneGeometry(4.5, 6.0, 1, 1), mat);
         group.add(mesh);
         meshes[i] = mesh;
         loaded += 1;
@@ -150,6 +150,9 @@
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
+      const tall = w / h < 1.05;
+      state.baseX = tall ? 0.18 : 1.08;
+      state.baseS = tall ? 0.8 : 0.72;
     }
 
     resize();
@@ -162,10 +165,10 @@
       const p = state.progress;
       const live = 1 - p;
 
-      group.rotation.y = Math.sin(now * 0.00055) * 0.22 * live + mouse.x * 0.28 * live + p * -0.12;
-      group.rotation.x = Math.sin(now * 0.0004) * 0.06 * live + mouse.y * -0.12 * live + p * 0.05;
-      group.position.set(1.72 - p * 0.72, -0.2 + p * 0.12, p * 0.9);
-      group.scale.setScalar(0.78 + p * 0.95);
+      group.rotation.y = Math.sin(now * 0.00055) * 0.12 * live + mouse.x * 0.16 * live + p * -0.08;
+      group.rotation.x = Math.sin(now * 0.0004) * 0.05 * live + mouse.y * -0.08 * live + p * 0.04;
+      group.position.set(state.baseX - p * 0.28, -0.06 + p * 0.08, p * 0.55);
+      group.scale.setScalar(state.baseS + p * 0.62);
       camera.position.z = 8.6 - p * 2.6;
       host.style.opacity = String(Math.max(0, 1 - Math.max(0, p - 0.8) * 5.5));
 
